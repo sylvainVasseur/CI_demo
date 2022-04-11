@@ -4,23 +4,12 @@ jobs:
   Test:
     runs-on: ubuntu-latest
     steps:
-      - name: Recuperation du Repo
-        uses: actions/checkout@v3 #utilise le repo (possibilité de spe une version)
-      - name: test1
-        run: exit 1
-      - name: test 2
-        run: echo "test 2"
-  Build:
-    needs: [Test] #attente du premier job pour lancer le Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: build de l'app
-        run: echo "Je build"
-  Check:
-    needs: [Test, Build]
-    runs-on: ubuntu-latest
-    if: always() && (needs.Test.result == 'failure' || needs.Build.result == 'failure')
-    steps:
-      - name: "Mail"
-        run: echo "mail"
-
+      - name: Github
+        run: echo '${{ toJSON(github) }}'
+      - name: job
+        run: echo '${{ toJSON(job) }}'
+      - name: strep
+        run: echo '${{ toJSON(github) }}'
+      - name: Runner
+        run: echo '${{ toJSON(runner) }}'
+      
