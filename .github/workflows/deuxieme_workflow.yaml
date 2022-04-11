@@ -1,0 +1,13 @@
+name: deuxieme
+on:
+  workflow_run:
+    workflows:
+      - "Toto"
+    types:
+      - "completed"
+jobs:
+  Tata:
+    runs-on: ubuntu-latest
+    steps:
+      - name: blalalal
+        run: echo 'yaa'
