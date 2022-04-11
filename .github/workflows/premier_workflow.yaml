@@ -4,12 +4,12 @@ jobs:
   Test:
     runs-on: ubuntu-latest
     steps:
-      - name: Github
+      - name: Github  #variable de contexte disponible
         run: echo '${{ toJSON(github) }}'
       - name: job
         run: echo '${{ toJSON(job) }}'
-      - name: strep
-        run: echo '${{ toJSON(github) }}'
+      - name: steps
+        run: echo '${{ toJSON(steps) }}'
       - name: Runner
         run: echo '${{ toJSON(runner) }}'
       
