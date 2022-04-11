@@ -1,8 +1,8 @@
 name: Toto
-on:
-  pull_request:
-    branches:
-      - "dev"
+on: [pull_request]
+  # pull_request:
+  #     branches:
+  #       - "dev"
 jobs:
   Test:
     runs-on: ubuntu-latest
