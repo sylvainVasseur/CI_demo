@@ -5,11 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Github  #variable de contexte disponible
-        run: echo '${{ toJSON(github) }}'
+        run: echo '${{ toJSON(github) }}' #git
       - name: job
-        run: echo '${{ toJSON(job) }}'
+        run: echo '${{ toJSON(job) }}' #job
       - name: steps
-        run: echo '${{ toJSON(steps) }}'
+        run: echo '${{ toJSON(steps) }}' #step
       - name: Runner
-        run: echo '${{ toJSON(runner) }}'
+        run: echo '${{ toJSON(runner) }}' #le ubuntu
       
