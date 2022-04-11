@@ -1,2 +1,2 @@
 # CI_demo
-test
+test 10
