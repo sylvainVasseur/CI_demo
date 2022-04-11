@@ -17,7 +17,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           title: Problème lors du test 1
           body: |
-            ## a faire
+            ## a faire ##
             Tout a pété!!!
       - name: afficher secrets
-        run: echo ${{ secrets.Toto }}
+        run: echo ${{ secrets.ToTo }}
