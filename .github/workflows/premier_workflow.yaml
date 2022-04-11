@@ -7,7 +7,7 @@ jobs:
       - name: Recuperation du Repo
         uses: actions/checkout@v3 #utilise le repo (possibilité de spe une version)
       - name: Afficher le contenu de mon job
-        run: ls
+        run: exit 1 #création erreure
       - name: Envoi mail
         if: ${{ failure() }}
         run: echo "Envoi d'un mail si le test échoue"
