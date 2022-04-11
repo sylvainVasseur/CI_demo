@@ -9,7 +9,7 @@ jobs:
       - name: test1
         run: exit 1
       - name: test 2
-        if: ${{ always }}
+        if: ${{ always() }}
         run: echo "test 2"
       - name: Afficher le contenu de mon job
         run: exit 1 #création erreure
