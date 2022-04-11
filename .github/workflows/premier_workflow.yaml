@@ -8,7 +8,7 @@ jobs:
   Test:
     runs-on: ubuntu-latest
     steps:
-      - uses: sylvainVasseur/actions-hello-cpi@1.2.0
+      - uses: sylvainVasseur/actions-hello-cpi@1.3.0
   #       run: exit 1
   # Create-issue:
   #   needs: [Test]
