@@ -1,7 +1,7 @@
 name: Toto
 on: [push]
 jobs:
-  MonPremierJob:
+  Test:
     runs-on: ubuntu-latest
     steps:
       - name: Recuperation du Repo
@@ -9,16 +9,18 @@ jobs:
       - name: test1
         run: exit 1
       - name: test 2
-        if: ${{ always() }}
         run: echo "test 2"
-      - name: Afficher le contenu de mon job
-        run: exit 1 #création erreure
-      - name: Envoi mail
-        if: ${{ failure() }} #success
-        run: echo "Envoi d'un mail si le test échoue"
-  # Build:
-  #   needs: [MonPremierJob] #attente du premier job pour lancer le Build
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: build de l'app
-  #       run: echo "Je build"
+  Build:
+    needs: [Test] #attente du premier job pour lancer le Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: build de l'app
+        run: echo "Je build"
+  Check:
+    needs: [Test, Build]
+    runs-on: ubuntu-latest
+    if: always() && (needs.Test.result == 'failure' || needs.Build.result == 'failure')
+    steps:
+      - name: "Mail"
+        run: echo "mail"
+
