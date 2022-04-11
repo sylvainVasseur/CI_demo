@@ -1,27 +1,9 @@
 name: Toto
-on: [pull_request]
-  # pull_request:
-  #     branches:
-  #       - "dev"
+on: [push]
 jobs:
   Test:
     runs-on: ubuntu-latest
     steps:
-      - name: Test 1
-        run: echo "Salut"
-  #       run: exit 1
-  # Create-issue:
-  #   needs: [Test]
-  #   runs-on: ubuntu-latest
-  #   if: always() && (needs.Test.result == 'failure')
-  #   steps:
-  #     - name: create issue
-  #       uses: actions-ecosystem/action-create-issue@v1
-  #       with:
-  #         github_token: ${{ secrets.GITHUB_TOKEN }}
-  #         title: Problème lors du test 1
-  #         body: |
-  #           ## a faire ##
-  #           Tout a pété!!!
-  #     - name: afficher secrets
-  #       run: echo ${{ secrets.ToTo }}
+      - uses: sylvainVasseur/actions-hello-cpi@2.0.0
+        with:
+          name: sylvain
