@@ -5,11 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Recuperation du Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3 #utilise le repo (possibilité de spe une version)
       - name: Afficher le contenu de mon job
         run: ls
   Build:
-    needs: [MonPremierJob]
+    needs: [MonPremierJob] #attente du premier job pour lancer le Build
     runs-on: ubuntu-latest
     steps:
       - name: build de l'app
