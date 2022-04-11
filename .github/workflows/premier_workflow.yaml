@@ -8,9 +8,12 @@ jobs:
         uses: actions/checkout@v3 #utilise le repo (possibilité de spe une version)
       - name: Afficher le contenu de mon job
         run: ls
-  Build:
-    needs: [MonPremierJob] #attente du premier job pour lancer le Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: build de l'app
-        run: echo "Je build"
+      - name: Envoi mail
+        if: ${{ failure() }}
+        run: echo "Envoi d'un mail si le test échoue"
+  # Build:
+  #   needs: [MonPremierJob] #attente du premier job pour lancer le Build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: build de l'app
+  #       run: echo "Je build"
