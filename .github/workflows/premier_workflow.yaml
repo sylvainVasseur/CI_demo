@@ -6,10 +6,15 @@ jobs:
     steps:
       - name: Recuperation du Repo
         uses: actions/checkout@v3 #utilise le repo (possibilité de spe une version)
+      - name: test1
+        run: exit 1
+      - name: test 2
+        if: ${{ always }}
+        run: echo "test 2"
       - name: Afficher le contenu de mon job
         run: exit 1 #création erreure
       - name: Envoi mail
-        if: ${{ failure() }}
+        if: ${{ failure() }} #success
         run: echo "Envoi d'un mail si le test échoue"
   # Build:
   #   needs: [MonPremierJob] #attente du premier job pour lancer le Build
