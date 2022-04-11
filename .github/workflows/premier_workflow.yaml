@@ -8,8 +8,7 @@ jobs:
   Test:
     runs-on: ubuntu-latest
     steps:
-      - name: Test 1
-        run: echo "Salut"
+      - uses: sylvainVasseur/CI_demo@1.1.0
   #       run: exit 1
   # Create-issue:
   #   needs: [Test]
